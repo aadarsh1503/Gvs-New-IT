@@ -1,4 +1,5 @@
 import React from 'react';
+import Slide1 from '../Slide1/Slide1';
 
 // ... (clientLogos data remains the same)
 const clientLogos = [
@@ -29,7 +30,7 @@ const OurClients = ({ isDarkMode }) => {
         {/* Header Section */}
         <header>
           <h2 className={`text-4xl font-jost md:text-5xl font-extrabold tracking-wider uppercase ${textColor}`}>
-            Our Clients
+            Our Trusted Partners
           </h2>
           <p className="mt-4 flex items-center justify-center gap-3">
             <span className="text-xl font-jost font-semibold text-[#EF3365] tracking-widest">
@@ -42,17 +43,8 @@ const OurClients = ({ isDarkMode }) => {
         </header>
 
         {/* Client Logos Grid */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 items-center justify-items-center gap-16 lg:gap-24">
-          {clientLogos.map((logo, index) => (
-            <div key={index} className="flex justify-center">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                // Apply the conditional filter class
-                className={`h-28 w-auto object-contain ${logoFilter}`}
-              />
-            </div>
-          ))}
+        <div className="">
+         <Slide1 />
         </div>
 
         {/* Pagination Dot */}

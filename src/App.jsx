@@ -1,25 +1,48 @@
+// src/App.jsx
+
 import React, { useState, useMemo, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
-import Hero from "./components/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
 import './App.css';
-import AboutCompany from "./components/AboutCompany/AboutCompany";
-import WhatWeDo from "./components/WhatWeDo/WhatWeDo";
-import ProfessionalSkills from "./components/ProfessionalSkills/ProfessionalSkills";
-import OurClients from "./components/OurClients/OurClients";
-import ClientLocations from "./components/Location/Location";
-import ContactUs from "./components/ContactUs/ContactUs";
+
+// Import Components
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions';
+import HomePage from './components/HomePage/HomePage';
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import RefundPolicy from './components/RefundPolicy/RefundPolicy';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // ===== LOCALSTORAGE INTEGRATION =====
+  // The state is now initialized by reading from localStorage.
+  // The `() => ...` syntax ensures this code only runs once on initial load.
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'dark'; // Returns true if 'dark', false otherwise
+  });
 
-  // 🌙 Theme toggle
+  // ===== EFFECT TO SAVE THEME =====
+  // This `useEffect` hook runs whenever `isDarkMode` changes.
+  useEffect(() => {
+    // 1. Save the choice to localStorage
+    const newTheme = isDarkMode ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
+
+    // 2. (Optional but good practice) Add/remove a class from the root HTML element
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  // The toggle function remains simple. The useEffect handles the side effects.
   const toggleTheme = () => {
     setIsDarkMode(prevMode => !prevMode);
   };
 
-  // 🎨 Dark gradient palette
+  // The rest of your component logic is perfect and doesn't need to change.
   const darkGradient = useMemo(() => {
     const colorStops = [
       '#222831', '#232932', '#242A33', '#262B34', 
@@ -30,47 +53,46 @@ function App() {
     return `linear-gradient(to bottom, ${colorStops.join(', ')})`;
   }, []);
 
-  // 🌈 Background setup
   const appStyle = isDarkMode
     ? { background: darkGradient }
     : { backgroundColor: '#F2EEE7' };
 
-  // 🚀 Smooth scroll setup with Lenis
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.3, // speed of the scroll (higher = slower)
+      duration: 1.3,
       smooth: true,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
-
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
-
     requestAnimationFrame(raf);
-
-    // cleanup when component unmounts
     return () => lenis.destroy();
   }, []);
 
   return (
-    <div
-      style={appStyle}
-      className={`transition-colors duration-500 ${
-        isDarkMode ? 'text-white' : 'text-black'
-      }`}
-    >
-      <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-      <Hero isDarkMode={isDarkMode} />
-      <AboutCompany isDarkMode={isDarkMode} />
-      <WhatWeDo isDarkMode={isDarkMode} />
-      <ProfessionalSkills isDarkMode={isDarkMode} />
-      <OurClients isDarkMode={isDarkMode} />
-      <ClientLocations isDarkMode={isDarkMode} />
-      <ContactUs isDarkMode={isDarkMode} />
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+    <Router>
+      <div
+        style={appStyle}
+        className={`transition-colors duration-500 ${
+          isDarkMode ? 'text-white' : 'text-black'
+        }`}
+      >
+        <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+        
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage isDarkMode={isDarkMode} />} />
+            <Route path="/terms&conditions" element={<TermsAndConditions isDarkMode={isDarkMode} />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy isDarkMode={isDarkMode} />} />
+            <Route path="/refund-policy" element={<RefundPolicy isDarkMode={isDarkMode} />} />
+          </Routes>
+        </main>
+        
+        <Footer isDarkMode={isDarkMode} />
+      </div>
+    </Router>
   );
 }
 

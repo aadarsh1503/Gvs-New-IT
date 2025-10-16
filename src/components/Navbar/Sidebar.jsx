@@ -1,34 +1,42 @@
 import React, { useEffect } from 'react';
+// ===== CHANGE #1: Import HashLink instead of Link =====
+import { HashLink } from 'react-router-hash-link';
 import { VscClose } from 'react-icons/vsc';
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 
-const NavLink = ({ children, href = '#', isDarkMode }) => {
+// ===== CHANGE #2: This component now uses HashLink =====
+// It's a direct replacement for Link that handles scrolling to sections.
+const NavLink = ({ children, to = '/', isDarkMode, onClick }) => {
   const linkColor = isDarkMode ? 'text-white' : 'text-black';
   return (
-    <a href={href} className={`text-xl font-bold tracking-widest transition-opacity hover:opacity-70 ${linkColor}`}>
+    <HashLink
+      to={to}
+      onClick={onClick} // This will trigger the closeSidebar function
+      smooth // This tells the library to scroll smoothly to the section
+      className={`text-xl font-bold tracking-widest transition-opacity hover:opacity-70 ${linkColor}`}
+    >
       {children}
-    </a>
+    </HashLink>
   );
 };
 
 const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
-  // ===== MODIFIED: navItems is now an array of objects =====
-  // Here you can define a unique href for every single item.
+  // Your navItems are already correctly formatted, no changes needed here.
   const navItems = [
-    { label: 'HOME', href: '/' },
-    { label: 'ABOUT US', href: '#about' },
-    { label: 'SERVICES', href: '#services' },
+    { label: 'HOME', href: '/#' },
+    { label: 'ABOUT US', href: '/#about' },
+    { label: 'SERVICES', href: '/#services' },
     { label: 'SHOP', href: '/store' },
-    { label: 'SKILLS', href: '#expertise' },
-    { label: 'SUBSIDIARIES', href: '/subsidiaries' },
-    { label: 'CONTACT', href: '#contact-us' },
+    { label: 'SKILLS', href: '/#expertise' },
+    { label: 'CONTACT', href: '/#contact-us' },
   ];
 
-  const sidebarBg = isDarkMode ? 'bg-[#3136C]' : 'bg-white';
+  // Corrected the hex color from '#3136C' to '#31363C'
+  const sidebarBg = isDarkMode ? 'bg-[#31363C]' : 'bg-white';
   const textColor = isDarkMode ? 'text-white' : 'text-black';
   const decorativeColor = isDarkMode ? 'bg-white' : 'bg-black';
   const borderColor = isDarkMode ? 'border-white' : 'border-black';
-  const circleBg = isDarkMode ? 'bg-[#3136C]' : 'bg-white';
+  const circleBg = isDarkMode ? 'bg-[#31363C]' : 'bg-white';
 
   useEffect(() => {
     if (isOpen) {
@@ -59,8 +67,8 @@ const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
       >
         <div className="relative h-full p-8 sm:p-12">
           {/* Close Button */}
-          <button 
-            onClick={closeSidebar} 
+          <button
+            onClick={closeSidebar}
             className={`absolute text-3xl top-8 right-8 transition-opacity duration-300 hover:opacity-70 ${textColor} ${
               isOpen ? 'opacity-100 delay-300' : 'opacity-0'
             }`}
@@ -68,8 +76,8 @@ const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
             <VscClose />
           </button>
 
-          {/* Decorative Elements */}
-          <div 
+          {/* Decorative Elements (No changes here) */}
+          <div
             className={`absolute top-28 bottom-24 w-px left-20 ${decorativeColor} transition-transform duration-700 ease-in-out origin-top ${
               isOpen ? 'scale-y-100 delay-200' : 'scale-y-0'
             }`}
@@ -87,19 +95,18 @@ const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
             {/* Navigation Menu */}
             <nav className="flex-grow">
               <ul className="flex flex-col gap-6">
-                {/* ===== MODIFIED: The .map() loop now uses the object's properties ===== */}
+                {/* Looping over navItems and passing correct props to the updated NavLink */}
                 {navItems.map((item, index) => (
-                  <li 
-                    key={item.label} // Use a unique value like the label for the key
+                  <li
+                    key={item.label}
                     className={`transition-all duration-300 ease-in-out ${
-                      isOpen 
-                        ? 'opacity-100 translate-x-0' 
+                      isOpen
+                        ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-12'
                     }`}
                     style={{ transitionDelay: `${200 + index * 50}ms` }}
                   >
-                    {/* Pass the custom href and label to the NavLink */}
-                    <NavLink href={item.href} isDarkMode={isDarkMode}>
+                    <NavLink to={item.href} isDarkMode={isDarkMode} onClick={closeSidebar}>
                       {item.label}
                     </NavLink>
                   </li>
@@ -107,8 +114,8 @@ const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
               </ul>
             </nav>
 
-            {/* Social Media Icons */}
-            <div 
+            {/* Social Media Icons (No changes here) */}
+            <div
               className={`flex items-center gap-6 mb-16 text-2xl ${textColor} transition-all duration-300 ease-in-out ${
                 isOpen ? 'opacity-100 translate-y-0 delay-500' : 'opacity-0 translate-y-10'
               }`}

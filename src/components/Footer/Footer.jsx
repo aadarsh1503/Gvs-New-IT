@@ -15,13 +15,13 @@ const Footer = ({ isDarkMode }) => {
         {/* Left Side: Social Media Icons */}
         {/* The icons will automatically inherit the text color from the parent footer */}
         <div className="flex items-center space-x-4 order-2 md:order-1">
-          <a href="#" aria-label="Instagram" className="hover:opacity-75 transition-opacity">
+          <a href="https://www.instagram.com/gvsbahrain" aria-label="Instagram" className="hover:opacity-75 transition-opacity">
             <FaInstagram className="w-6 h-6" />
           </a>
-          <a href="#" aria-label="LinkedIn" className="hover:opacity-75 transition-opacity">
+          <a href="https://www.linkedin.com/company/global-vision-solutions/" aria-label="LinkedIn" className="hover:opacity-75 transition-opacity">
             <FaLinkedinIn className="w-6 h-6" />
           </a>
-          <a href="#" aria-label="Facebook" className="hover:opacity-75 transition-opacity">
+          <a href="https://www.facebook.com/gvsbahrain" aria-label="Facebook" className="hover:opacity-75 transition-opacity">
             <FaFacebookF className="w-6 h-6" />
           </a>
         </div>
@@ -29,22 +29,24 @@ const Footer = ({ isDarkMode }) => {
         {/* Center: Copyright Information */}
         {/* The text here also inherits the color from the parent footer */}
         <div className="text-center font-semibold order-1 md:order-2">
-          <p>
-            COPYRIGHT © 2024 <a href="#" className="text-[#EF3365] hover:underline">KLIENTSHIP TECHNOLOGIES</a>
-          </p>
-          <p className="mt-1">CIN: U72900KA2022PTC162006</p>
+        <p>
+  COPYRIGHT © {new Date().getFullYear()} 
+  <a href="#" className="text-[#EF3365] hover:underline"> Global Vision Solutions</a>
+</p>
+
+          {/* <p className="mt-1">CIN: U72900KA2022PTC162006</p> */}
         </div>
 
         {/* Right Side: Legal Links */}
         <nav className="flex flex-wrap text-sm font-jost items-center justify-center gap-x-3 gap-y-2 order-3">
-          <a href="#" className="text-[#EF3365] font-semibold hover:underline">Terms & Conditions</a>
+          <a href="/terms&conditions" className="text-[#EF3365] font-semibold hover:underline">Terms & Conditions</a>
           {/* Apply the dynamic text color to the separator */}
           <span className={textColor}>|</span>
-          <a href="#" className="text-[#EF3365] font-semibold hover:underline">Privacy Policy</a>
+          <a href="/privacy-policy" className="text-[#EF3365] font-semibold hover:underline">Privacy Policy</a>
           <span className={textColor}>|</span>
-          <a href="#" className="text-[#EF3365] font-semibold hover:underline">Refund Policy</a>
+          <a href="/refund-policy" className="text-[#EF3365] font-semibold hover:underline">Refund Policy</a>
           <span className={textColor}>|</span>
-          <a href="#contact-us" className="text-[#EF3365] font-semibold hover:underline">Contact</a>
+          <a href="/#contact-us" className="text-[#EF3365] font-semibold hover:underline">Contact</a>
         </nav>
 
       </div>

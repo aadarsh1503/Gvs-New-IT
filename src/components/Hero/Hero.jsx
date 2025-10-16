@@ -43,11 +43,11 @@ const Hero = ({ isDarkMode }) => {
              <span className=" text-[#EF3365] font-devinyl"><span className={`${isDarkMode ? 'text-white' : 'text-black'}`}>TRANSFORMING, </span>TECHNOLOGY WORLDWIDE</span>
           </p>
           <div>
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-[#EF3365]" style={textStrokeStyle}>
-              KLIENTSHIP
+            <h1 className="text-6xl whitespace-nowrap sm:text-7xl lg:text-7xl font-extrabold text-[#EF3365]" style={textStrokeStyle}>
+              GLOBAL VISION
             </h1>
-            <h2 className="text-6xl text-white sm:text-7xl lg:text-8xl font-extrabold" style={textStrokeStyle}>
-              PVT LTD
+            <h2 className="text-6xl text-white sm:text-7xl lg:text-7xl font-extrabold" style={textStrokeStyle}>
+              SOLUTIONS
             </h2>
           </div>
           <p className="text-2xl">
@@ -62,9 +62,11 @@ const Hero = ({ isDarkMode }) => {
             <a href="#" aria-label="Facebook" className="text-2xl hover:text-brand-teal transition-colors"><FaFacebook /></a>
           </div>
           <div className="flex items-center gap-4">
+            <a href='#contact-us'>
             <button className={buttonClasses}>
               CONTACT NOW
             </button>
+            </a>
             <div className={`w-16 h-px ${isDarkMode ? 'bg-white' : 'bg-black'}`}></div>
             <p className="font-bold tracking-wider">OUR SKILLS</p>
           </div>

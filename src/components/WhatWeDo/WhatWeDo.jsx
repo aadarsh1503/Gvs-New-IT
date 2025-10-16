@@ -1,39 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// --- DUMMY DATA (Unchanged) ---
+// --- UPDATED DUMMY DATA ---
 const servicesData = [
   {
-    category: 'ENGINEERING SERVICES',
-    title: 'Comprehensive Engineering Solutions',
-    description: 'Provide a range of engineering services to support your technical projects and innovations.',
+    category: 'MOBILE APP DEVELOPMENT',
+    title: 'Full-Cycle Mobile Solutions',
+    description: 'We offer Custom Mobile Application Development (iOS, Android), Cross-Platform solutions (React Native, Flutter), UI/UX Design, Backend Integration, and full Maintenance and Support.',
   },
   {
-    category: 'INTERNET OF THINGS (IOT)',
-    title: 'Smart IoT Solutions',
-    description: 'Develop IoT solutions that connect devices and optimize processes for improved efficiency.',
+    category: 'E-COMMERCE SOLUTIONS',
+    title: 'End-to-End E-Commerce Management',
+    description: 'Our services include E-Commerce Website Development (Shopify, WooCommerce), Payment Gateway Integration, Inventory Management, UX Design, Analytics, and CRM Integration.',
   },
   {
-    category: 'APPLICATION MODERNIZATION',
-    title: 'Transforming Legacy Applications',
-    description: 'Modernize your legacy applications to enhance performance, security, and user experience.',
+    category: 'DIGITAL MARKETING',
+    title: 'Integrated Marketing Strategies',
+    description: 'Boost your brand with our comprehensive marketing solutions, including SEO, Content Marketing, Social Media Management, PPC Advertising, and data-driven Web Analytics.',
   },
   {
-    category: 'CLOUD-NATIVE DEVELOPMENT',
-    title: 'Scalable Cloud Solutions',
-    description: 'Build and deploy applications that leverage the full potential of cloud infrastructure for scalability.',
+    category: 'COGNITIVE SERVICE MATRIX',
+    title: 'Core Protocol Integration',
+    description: 'Engage with foundational services like Cognitive-Wave Synthesis, Neural Mesh Integration, Quantum Entanglement Comms, and Bio-Digital Symbiote Frameworks.',
   },
   {
-    category: 'UI/UX DESIGN',
-    title: 'User-Centric Design Systems',
-    description: 'Create intuitive and engaging user interfaces that provide a seamless and enjoyable experience.',
+    category: 'COGNITIVE SERVICE MATRIX',
+    title: 'Augmented Reality & UI',
+    description: 'Experience the future with Holo-Matter Projection, Hard-Light Environment Crafting, Direct-to-Cortex UI Overlays, and Personalized Reality Augmentation.',
   },
   {
-    category: 'DATA & ANALYTICS',
-    title: 'Advanced Data Analytics',
-    description: 'Unlock valuable insights from your data to drive informed business decisions and strategies.',
+    category: 'COGNITIVE SERVICE MATRIX',
+    title: 'Advanced Data & Environment Control',
+    description: 'Leverage next-gen capabilities such as Sentient Environment Control, Temporal Stream Alignment, Pre-Cognitive Threat Analysis, and Subspace Server Migration.',
   },
 ];
+
 
 // --- ArrowIcon Component (Unchanged) ---
 const ArrowIcon = () => (
@@ -68,7 +69,7 @@ const ServiceCard = ({ category, title, description, isDarkMode }) => {
       <h3 className={`text-2xl font-bold mb-4 ${primaryTextColor}`}>{title}</h3>
       <p className={`leading-relaxed flex-grow ${secondaryTextColor}`}>{description}</p>
       <a href="#" className={`flex items-center gap-2 font-bold mt-8 z-10 ${primaryTextColor}`}>
-        See Pricing <ArrowIcon />
+        Contact Us <ArrowIcon />
       </a>
       <div className="absolute bottom-8 right-8 grid grid-cols-4 gap-2 pointer-events-none">
         {Array.from({ length: 12 }).map((_, i) => (
@@ -80,7 +81,7 @@ const ServiceCard = ({ category, title, description, isDarkMode }) => {
 };
 
 
-// ===== UPDATED MAIN SECTION COMPONENT =====
+// ===== MAIN SECTION COMPONENT (Unchanged) =====
 const WhatWeDo = ({ isDarkMode }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -100,21 +101,19 @@ const WhatWeDo = ({ isDarkMode }) => {
     // Added `relative` and `overflow-hidden` to contain the background text
     <section id='services' className={`relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden ${sectionBg}`}>
       
-      {/* ===== START: Background watermark text ===== */}
+      {/* ===== Background watermark text (Unchanged) ===== */}
       <div className="absolute inset-0 flex items-center z-100 justify-center z-0 pointer-events-none">
-        <h2 className={`text-[120px] font-caveat relative top-[360px]  sm:text-[180px] lg:text-[300px] font-black opacity-5 select-none ${textColor}`}>
+        <h2 className={`text-[120px] font-caveat relative top-[430px]  sm:text-[180px] lg:text-[300px] font-black opacity-5 select-none ${textColor}`}>
           Services
         </h2>
       </div>
-      {/* ===== END: Background watermark text ===== */}
-
+      
       {/* Main content container with `relative z-10` to place it above the watermark */}
       <div className="relative z-10 max-w-7xl mx-auto">
         <header className="text-center">
           <h2 className={`text-4xl md:text-5xl font-extrabold tracking-wider uppercase ${textColor}`}>WHAT WE DO</h2>
-          <p className="mt-4 flex items-center justify-center gap-3">
-            <span className="text-sm font-semibold text-[#EF3365] tracking-widest">OUR</span>
-            <span className={`font-serif italic text-2xl ${textColor}`}>Services</span>
+          <p className={`mt-4 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            It’s not about limitations, but this is something about what we focus on.
           </p>
         </header>
 

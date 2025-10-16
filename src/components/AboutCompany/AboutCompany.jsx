@@ -23,7 +23,7 @@ const AboutCompany = ({ isDarkMode }) => {
       
       {/* Background watermark text */}
       <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-        <h2 className={`text-[120px] top-[430px] relative font-caveat sm:text-[180px] lg:text-[300px] font-black opacity-5 select-none ${textColor}`}>
+        <h2 className={`text-[120px] top-[470px] relative font-caveat sm:text-[180px] lg:text-[300px] font-black opacity-5 select-none ${textColor}`}>
           About Us
         </h2>
       </div>
@@ -60,25 +60,28 @@ const AboutCompany = ({ isDarkMode }) => {
           </h3>
           <div className={`mt-6 space-y-6 text-lg leading-relaxed ${paragraphColor}`}>
             <p>
-              Klientship Technologies Pvt Ltd is a technology transformation company that provides advanced data solutions, application development, e-commerce solutions, comprehensive engineering solutions, smart IoT solutions, and legacy application transformation services. Founded in 2018 under the name VAwebsites by brothers Likith Jagannatha Poojary and Harshith J Poojary, the company focuses on helping startups and corporate clients through unique partnership opportunities, delivering state-of-the-art technology solutions and launching innovative digital products to elevate their business.
+            We are a next-generation technology company, that brings to you the latest digital solutions tailored to the requirements of your business. We at GLOBAL VISION SOLUTIONS offers a wide array of services, ranging from Simple Static Sites to full-blown Content Managed Enterprise Solutions. A team of experienced developers, programmers, testers and designers work tirelessly to deliver quality business products that cater to the client’s demands. We focus on each client and work dedicatedly to provide innovative and dynamic solutions using cutting-edge tools and modern technology.
+
             </p>
             <p>
-              In 2022, the company was registered as a private limited company and changed its name to Klientship Technologies Pvt Ltd. The company has its headquarters in Mangaluru, India. Klientship Technologies Pvt Ltd has several subsidiaries, including Social Bubble, which provides social media management services, The Smart Learn, an e-learning platform, Easy Tourism, a travel and tourism company and Accountin, which provides accounting and financial management services.
+            In case more details required, add:
+            In addition to our core development services, GLOBAL VISION SOLUTIONS takes pride in offering end-to-end digital transformation support—from strategic consultation and UI/UX design to deployment, maintenance, and scalability planning. We understand that every business is unique, which is why we emphasize close collaboration and agile methodologies to ensure our solutions evolve with your goals. Whether you're launching a startup, upgrading legacy systems, or expanding your digital footprint, our team is equipped to deliver robust, secure, and future-ready platforms that empower growth and drive success.
             </p>
             <p>
-              We, as a company, have digital product experts and tech enthusiasts who form a small, focused team of experienced developers, designers, and digital marketing professionals, averaging over 5 years of industry experience. This agile and youthful team collaborates closely with clients from various sectors, including healthcare, finance, retail, and e-commerce, to deliver customized solutions that meet specific needs. By prioritizing the development of important products for startups, Klientship Technologies Pvt Ltd ensures that it leverages the expertise of its top engineers to create impactful solutions.
+            GLOBAL VISION SOLUTIONS was founded with a vision to bridge the gap between businesses and emerging digital technologies. From its inception, the company has been driven by a passion for innovation and a commitment to excellence. What began as a small team of tech enthusiasts has grown into a dynamic organization serving clients across diverse industries. Over the years, we’ve evolved alongside the digital landscape—adapting to new tools, embracing agile methodologies, and expanding our service portfolio to meet the ever-changing demands of modern enterprises. Our journey is marked by successful partnerships, transformative projects, and a relentless pursuit of delivering value through technology.
             </p>
           </div>
         </div>
 
         {/* Vision Section */}
-        <div className="mt-20 max-w-7xl mx-auto text-left">
+        <div className="mt-12 mb-12 max-w-7xl mx-auto text-left">
           <h3 className={`text-3xl font-bold ${textColor}`}>
             Our Vision
           </h3>
           <div className={`mt-6 space-y-6 text-lg leading-relaxed ${paragraphColor}`}>
             <p>
-            Klientship Technologies Pvt Ltd envisions developing as an early-stage product development company specialized in empowering startups to transition from small ideas to exceptional success by leveraging advanced technology, including AI and data analytics. We aspire to be recognized as a specialized firm in creating early-stage products like Minimum Viable Products (MVPs) and becoming a trusted tech partner for each startup we collaborate with. In the future, we aim to be a one-stop destination for early-stage startups seeking MVP development and R&D, utilizing our shared resources to establish a global presence in promoting and advancing early-stage ventures.
+            We are a next-generation technology company, that brings to you the latest digital solutions tailored to the requirements of your business. We at GLOBAL VISION SOLUTIONS offers a wide array of services, ranging from Simple Static Sites to full-blown Content Managed Enterprise Solutions. A team of experienced developers, programmers, testers and designers work tirelessly to deliver quality business products that cater to the client’s demands. We focus on each client and work dedicatedly to provide innovative and dynamic solutions using cutting-edge tools and modern technology
+            Stats
             </p>
           </div>
         </div>
