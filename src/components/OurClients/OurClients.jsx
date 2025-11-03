@@ -17,7 +17,7 @@ const OurClients = ({ isDarkMode }) => {
     ? 'bg-[#222831]' 
     : 'bg-[#F3EFE8]'; // Light mode remains flat and seamless.
 
-  const textColor = isDarkMode ? 'text-white' : 'text-black';
+  const textColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   const borderColor = isDarkMode ? 'border-white' : 'border-black';
   
   // This class is essential to make dark logos visible on a dark background.
@@ -33,7 +33,7 @@ const OurClients = ({ isDarkMode }) => {
             Our Trusted Partners
           </h2>
           <p className="mt-4 flex items-center justify-center gap-3">
-            <span className="text-xl font-jost font-semibold text-[#EF3365] tracking-widest">
+            <span className="text-xl font-jost font-semibold text-[#0284c7] tracking-widest">
               TOP COMPANIES
             </span>
             <span className={`font-serif italic text-2xl ${textColor}`}>
@@ -49,7 +49,7 @@ const OurClients = ({ isDarkMode }) => {
 
         {/* Pagination Dot */}
         <div className="mt-20 flex justify-center">
-          <div className={`w-3 h-3 rounded-full bg-[#EF3365] border-2 ${borderColor}`}></div>
+          <div className={`w-3 h-3 rounded-full bg-[#0284c7] border-2 ${borderColor}`}></div>
         </div>
         
       </div>

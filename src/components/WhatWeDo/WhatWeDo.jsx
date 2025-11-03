@@ -39,8 +39,8 @@ const servicesData = [
 // --- ArrowIcon Component (Unchanged) ---
 const ArrowIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M14.43 5.92999L20.5 12L14.43 18.07" stroke="#EF3365" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M3.5 12H20.33" stroke="#EF3365" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M14.43 5.92999L20.5 12L14.43 18.07" stroke="#0284c7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M3.5 12H20.33" stroke="#0284c7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -53,7 +53,7 @@ const ServiceCard = ({ category, title, description, isDarkMode }) => {
   };
 
   const cardBg = isDarkMode ? 'bg-[#2a303a]' : 'bg-white';
-  const primaryTextColor = isDarkMode ? 'text-white' : 'text-black';
+  const primaryTextColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   const secondaryTextColor = isDarkMode ? 'text-gray-300' : 'text-gray-600';
   const tertiaryTextColor = isDarkMode ? 'text-gray-400' : 'text-gray-500';
   const dotBorderColor = isDarkMode ? 'border-white/30' : 'border-black/30';
@@ -95,7 +95,7 @@ const WhatWeDo = ({ isDarkMode }) => {
     ? 'bg-gradient-to-b from-[#3a4554] to-[#414a58]'
     : 'bg-gradient-to-b from-[#F2EEE7] to-[#EAE6DD]';
 
-  const textColor = isDarkMode ? 'text-white' : 'text-black';
+  const textColor = isDarkMode ? 'text-white' : 'text-[#464646]';
 
   return (
     // Added `relative` and `overflow-hidden` to contain the background text

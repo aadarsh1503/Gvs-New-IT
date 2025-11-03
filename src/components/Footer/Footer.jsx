@@ -5,7 +5,7 @@ import { FaInstagram, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 const Footer = ({ isDarkMode }) => {
   // Define conditional classes for the background and text colors
   const footerBg = isDarkMode ? 'bg-[#222831]' : 'bg-[#F0EBE3]';
-  const textColor = isDarkMode ? 'text-white' : 'text-black';
+  const textColor = isDarkMode ? 'text-white' : 'text-[#464646]';
 
   return (
     // Apply the dynamic background and text color classes
@@ -31,7 +31,7 @@ const Footer = ({ isDarkMode }) => {
         <div className="text-center font-semibold order-1 md:order-2">
         <p>
   COPYRIGHT © {new Date().getFullYear()} 
-  <a href="#" className="text-[#EF3365] hover:underline"> Global Vision Solutions</a>
+  <a href="#" className="text-[#0284c7] hover:underline"> Global Vision Solutions</a>
 </p>
 
           {/* <p className="mt-1">CIN: U72900KA2022PTC162006</p> */}
@@ -39,14 +39,14 @@ const Footer = ({ isDarkMode }) => {
 
         {/* Right Side: Legal Links */}
         <nav className="flex flex-wrap text-sm font-jost items-center justify-center gap-x-3 gap-y-2 order-3">
-          <a href="/terms&conditions" className="text-[#EF3365] font-semibold hover:underline">Terms & Conditions</a>
+          <a href="/terms&conditions" className="text-[#0284c7] font-semibold hover:underline">Terms & Conditions</a>
           {/* Apply the dynamic text color to the separator */}
           <span className={textColor}>|</span>
-          <a href="/privacy-policy" className="text-[#EF3365] font-semibold hover:underline">Privacy Policy</a>
+          <a href="/privacy-policy" className="text-[#0284c7] font-semibold hover:underline">Privacy Policy</a>
           <span className={textColor}>|</span>
-          <a href="/refund-policy" className="text-[#EF3365] font-semibold hover:underline">Refund Policy</a>
+          <a href="/refund-policy" className="text-[#0284c7] font-semibold hover:underline">Refund Policy</a>
           <span className={textColor}>|</span>
-          <a href="/#contact-us" className="text-[#EF3365] font-semibold hover:underline">Contact</a>
+          <a href="/#contact-us" className="text-[#0284c7] font-semibold hover:underline">Contact</a>
         </nav>
 
       </div>

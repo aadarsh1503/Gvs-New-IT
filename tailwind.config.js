@@ -17,7 +17,7 @@ module.exports = {
         // Colors picked from the image
         'brand-teal': '#28a994',
         'brand-bg': '#f8f5f1',
-        'brand-pink': '#EF3365',
+        'brand-pink': '#0284c7',
         'cream': '#F0EBE3',
         'brand-background': '#FAF6F1',
       },

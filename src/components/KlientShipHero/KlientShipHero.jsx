@@ -69,7 +69,7 @@ const KlientShipHero = () => {
           </div>
 
           <div className="flex items-center space-x-8 pt-4">
-            <button className="border border-gray-400 rounded-full px-8 py-3 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+            <button className="border border-gray-400 rounded-full px-8 py-3 text-xs font-bold tracking-wider hover:bg-white hover:text-[#464646] transition-all duration-300">
               CONTACT NOW
             </button>
             <a href="#skills" className="text-xs font-bold tracking-wider hover:text-gray-300 transition-colors">OUR SKILLS</a>
@@ -80,7 +80,7 @@ const KlientShipHero = () => {
         <div className="relative mt-12 md:mt-0 h-[500px] w-full max-w-[500px] mx-auto">
     {/* Pink background circle */}
     {/* It is ABSOLUTE, pinned to the BOTTOM, and centered horizontally */}
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[350px] h-[350px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px] bg-[#EF3365] rounded-full z-0"></div>
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[350px] h-[350px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px] bg-[#0284c7] rounded-full z-0"></div>
 
     {/* The Image */}
     {/* Also ABSOLUTE, pinned to the BOTTOM, and centered horizontally */}

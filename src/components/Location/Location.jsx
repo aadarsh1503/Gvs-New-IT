@@ -7,7 +7,7 @@ const ClientLocations = ({ isDarkMode }) => {
     ? 'bg-[#222831]' // Starts where OurClients ended
     : 'bg-[#F3EFE8]'; // Remains flat and seamless with OurClients
 
-  const textColor = isDarkMode ? 'text-white' : 'text-black';
+  const textColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   
   // The map image from your source is a PNG that works well on both light and dark backgrounds.
   // If it were an SVG or a dark-themed PNG, we could apply a filter like in OurClients.
@@ -23,7 +23,7 @@ const ClientLocations = ({ isDarkMode }) => {
             Client Locations
           </h2>
           <p className="mt-4 flex items-center justify-center gap-3">
-            <span className="text-sm font-jost font-semibold text-[#EF3365] tracking-widest">
+            <span className="text-sm font-jost font-semibold text-[#0284c7] tracking-widest">
               WE SERVE
             </span>
             <span className={`font-serif italic text-2xl ${textColor}`}>

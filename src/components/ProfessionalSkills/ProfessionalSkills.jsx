@@ -32,7 +32,7 @@ const skillsData = [
 // ===== UPDATED SkillCard COMPONENT =====
 const SkillCard = ({ title, description, isDarkMode }) => {
   // Define conditional classes for the card's elements
-  const titleColor = isDarkMode ? 'text-white' : 'text-black';
+  const titleColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   const descriptionColor = isDarkMode ? 'text-gray-300' : 'text-gray-600';
   const lineColor = isDarkMode ? 'bg-white' : 'bg-black';
   const borderColor = isDarkMode ? 'border-white' : 'border-black';
@@ -45,7 +45,7 @@ const SkillCard = ({ title, description, isDarkMode }) => {
       </p>
       <div className="relative mt-8 h-6">
         <div className={`absolute top-1/2 left-0 right-3 h-px -translate-y-1/2 ${lineColor}`}></div>
-        <div className={`absolute top-1/2 right-0 h-6 w-6 -translate-y-1/2 rounded-full border-2 bg-[#EF3365] shadow-md ${borderColor}`}></div>
+        <div className={`absolute top-1/2 right-0 h-6 w-6 -translate-y-1/2 rounded-full border-2 bg-[#0284c7] shadow-md ${borderColor}`}></div>
       </div>
     </div>
   );
@@ -59,7 +59,7 @@ const ProfessionalSkills = ({ isDarkMode }) => {
     ? 'bg-gradient-to-b from-[#414a58] to-[#41a58]' // Starts where WhatWeDo ended
     : 'bg-gradient-to-b from-[#EAE6DD] to-[#F3EFE8]'; // Starts where WhatWeDo ended
 
-  const textColor = isDarkMode ? 'text-white' : 'text-black';
+  const textColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   const lineColor = isDarkMode ? 'bg-white' : 'bg-black';
   const borderColor = isDarkMode ? 'border-white' : 'border-black';
   const circleBg = isDarkMode ? 'bg-[#3a4554]' : 'bg-[#FAF6F1]'; // Dark mode equivalent for the decorative circles
@@ -87,7 +87,7 @@ const ProfessionalSkills = ({ isDarkMode }) => {
             Professional Skills
           </h2>
           <p className="mt-4 text-xl">
-            <span className="font-semibold font-jost text-[#EF3365]">OUR</span>
+            <span className="font-semibold font-jost text-[#0284c7]">OUR</span>
             <span className={`ml-2 font-serif italic text-2xl ${textColor}`}>Expertise</span>
           </p>
         </header>

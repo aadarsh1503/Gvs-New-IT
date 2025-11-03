@@ -1,18 +1,15 @@
 import React, { useEffect } from 'react';
-// ===== CHANGE #1: Import HashLink instead of Link =====
 import { HashLink } from 'react-router-hash-link';
 import { VscClose } from 'react-icons/vsc';
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 
-// ===== CHANGE #2: This component now uses HashLink =====
-// It's a direct replacement for Link that handles scrolling to sections.
 const NavLink = ({ children, to = '/', isDarkMode, onClick }) => {
-  const linkColor = isDarkMode ? 'text-white' : 'text-black';
+  const linkColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   return (
     <HashLink
       to={to}
-      onClick={onClick} // This will trigger the closeSidebar function
-      smooth // This tells the library to scroll smoothly to the section
+      onClick={onClick}
+      smooth
       className={`text-xl font-bold tracking-widest transition-opacity hover:opacity-70 ${linkColor}`}
     >
       {children}
@@ -21,7 +18,6 @@ const NavLink = ({ children, to = '/', isDarkMode, onClick }) => {
 };
 
 const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
-  // Your navItems are already correctly formatted, no changes needed here.
   const navItems = [
     { label: 'HOME', href: '/#' },
     { label: 'ABOUT US', href: '/#about' },
@@ -31,21 +27,31 @@ const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
     { label: 'CONTACT', href: '/#contact-us' },
   ];
 
-  // Corrected the hex color from '#3136C' to '#31363C'
   const sidebarBg = isDarkMode ? 'bg-[#31363C]' : 'bg-white';
-  const textColor = isDarkMode ? 'text-white' : 'text-black';
+  const textColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   const decorativeColor = isDarkMode ? 'bg-white' : 'bg-black';
   const borderColor = isDarkMode ? 'border-white' : 'border-black';
   const circleBg = isDarkMode ? 'bg-[#31363C]' : 'bg-white';
 
+  // UPDATED LOGIC FOR SCROLL LOCK
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
+    // Find the scrolling container by its class name
+    // Replace '.app-container' with the actual class or ID
+    const scrollContainer = document.querySelector('.app-container');
+    
+    if (scrollContainer) {
+      if (isOpen) {
+        scrollContainer.classList.add('body-no-scroll');
+      } else {
+        scrollContainer.classList.remove('body-no-scroll');
+      }
     }
+
+    // Cleanup function
     return () => {
-      document.body.style.overflow = 'auto';
+      if (scrollContainer) {
+        scrollContainer.classList.remove('body-no-scroll');
+      }
     };
   }, [isOpen]);
 
@@ -76,7 +82,7 @@ const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
             <VscClose />
           </button>
 
-          {/* Decorative Elements (No changes here) */}
+          {/* Decorative Elements */}
           <div
             className={`absolute top-28 bottom-24 w-px left-20 ${decorativeColor} transition-transform duration-700 ease-in-out origin-top ${
               isOpen ? 'scale-y-100 delay-200' : 'scale-y-0'
@@ -95,7 +101,6 @@ const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
             {/* Navigation Menu */}
             <nav className="flex-grow">
               <ul className="flex flex-col gap-6">
-                {/* Looping over navItems and passing correct props to the updated NavLink */}
                 {navItems.map((item, index) => (
                   <li
                     key={item.label}
@@ -114,15 +119,15 @@ const Sidebar = ({ isOpen, closeSidebar, isDarkMode }) => {
               </ul>
             </nav>
 
-            {/* Social Media Icons (No changes here) */}
+            {/* Social Media Icons */}
             <div
               className={`flex items-center gap-6 mb-16 text-2xl ${textColor} transition-all duration-300 ease-in-out ${
                 isOpen ? 'opacity-100 translate-y-0 delay-500' : 'opacity-0 translate-y-10'
               }`}
             >
-              <a href="https://instagram.com" aria-label="Instagram" className="transition-opacity hover:opacity-70"><FaInstagram /></a>
-              <a href="https://linkedin.com" aria-label="LinkedIn" className="transition-opacity hover:opacity-70"><FaLinkedinIn /></a>
-              <a href="https://facebook.com" aria-label="Facebook" className="transition-opacity hover:opacity-70"><FaFacebookF /></a>
+              <a href="https://www.instagram.com/gvsbahrain" aria-label="Instagram" className="transition-opacity hover:opacity-70"><FaInstagram /></a>
+              <a href="https://www.linkedin.com/company/global-vision-solutions/" aria-label="LinkedIn" className="transition-opacity hover:opacity-70"><FaLinkedinIn /></a>
+              <a href="https://www.facebook.com/gvsbahrain" aria-label="Facebook" className="transition-opacity hover:opacity-70"><FaFacebookF /></a>
             </div>
           </div>
         </div>

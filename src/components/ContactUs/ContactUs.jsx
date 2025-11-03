@@ -5,8 +5,8 @@ import { IoBookOutline, IoPersonOutline, IoMailOutline, IoPhonePortraitOutline }
 const ContactInfoItem = ({ icon, title, children, isDarkMode }) => {
   const iconContainerClasses = isDarkMode 
     ? "bg-transparent border-2 border-white text-white" 
-    : "bg-white border-2 border-black text-black";
-  const titleColor = isDarkMode ? 'text-white' : 'text-black';
+    : "bg-white border-2 border-black text-[#464646]";
+  const titleColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   const textColor = isDarkMode ? 'text-gray-300' : 'text-gray-600';
 
   return (
@@ -28,8 +28,8 @@ const ContactUs = ({ isDarkMode }) => {
     ? 'bg-gradient-to-b from-[#222831] to-[#3E4651]' 
     : 'bg-gradient-to-b from-[#F3EFE8] to-white to-80%';
 
-  const textColor = isDarkMode ? 'text-white' : 'text-black';
-  const watermarkColor = isDarkMode ? 'text-white' : 'text-black';
+  const textColor = isDarkMode ? 'text-white' : 'text-[#464646]';
+  const watermarkColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   const lineColor = isDarkMode ? 'bg-white' : 'bg-black';
   const borderColor = isDarkMode ? 'border-white' : 'border-black';
   
@@ -66,7 +66,7 @@ const ContactUs = ({ isDarkMode }) => {
             CONTACT US
           </h2>
           <p className="mt-4 flex items-center justify-center gap-3">
-            <span className="text-sm font-semibold text-[#EF3365] tracking-widest">LET'S</span>
+            <span className="text-sm font-semibold text-[#0284c7] tracking-widest">LET'S</span>
             <span className={`font-serif italic text-2xl ${textColor}`}>Talk About Ideas</span>
           </p>
         </header>

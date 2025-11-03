@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaInstagram } from 'react-icons/fa';
 import { FaXTwitter, FaLinkedinIn, FaFacebook } from 'react-icons/fa6';
 import { FiEyeOff, FiLifeBuoy, FiShoppingCart, FiGrid } from 'react-icons/fi';
 
@@ -8,8 +9,8 @@ const Hero = ({ isDarkMode }) => {
     WebkitTextStroke: isDarkMode ? '2px #000000' : '2px #000000'
   };
   const buttonClasses = isDarkMode 
-    ? "bg-transparent border-2 border-white rounded-full px-8 py-3 font-bold hover:bg-[#EF3365] hover:text-white transition-all duration-300 shadow-[4px_4px_0_0_#FFF]"
-    : "bg-white border-2 border-black rounded-full px-8 py-3 font-bold hover:bg-[#EF3365] hover:text-white transition-all duration-300 shadow-[4px_4px_0_0_#000]";
+    ? "bg-transparent border-2 border-white rounded-full px-8 py-3 font-bold hover:bg-[#0284c7] hover:text-white transition-all duration-300 shadow-[4px_4px_0_0_#FFF]"
+    : "bg-white border-2 border-black rounded-full px-8 py-3 font-bold hover:bg-[#0284c7] hover:text-white transition-all duration-300 shadow-[4px_4px_0_0_#000]";
   const statBoxClasses = isDarkMode
     ? "bg-[#2a303a] border-2 border-white rounded-full px-6 py-3 flex items-center gap-4 shadow-[4px_4px_0_0_#FFF]"
     : "bg-white border-2 border-black rounded-full px-6 py-3 flex items-center gap-4 shadow-[4px_4px_0_0_#000]";
@@ -40,13 +41,13 @@ const Hero = ({ isDarkMode }) => {
       <main className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen">
         <div className="flex flex-col justify-center px-8 sm:px-16 py-32 lg:py-0 z-10">
           <p className="font-bold tracking-wider mt-8">
-             <span className=" text-[#EF3365] font-devinyl"><span className={`${isDarkMode ? 'text-white' : 'text-black'}`}>TRANSFORMING, </span>TECHNOLOGY WORLDWIDE</span>
+             <span className=" text-[#0284c7] font-devinyl"><span className={`${isDarkMode ? 'text-white' : 'text-[#464646]'}`}>TRANSFORMING, </span>TECHNOLOGY WORLDWIDE</span>
           </p>
           <div>
-            <h1 className="text-6xl whitespace-nowrap sm:text-7xl lg:text-7xl font-extrabold text-[#EF3365]" style={textStrokeStyle}>
+            <h1 className="text-6xl whitespace-nowrap sm:text-7xl lg:text-7xl font-extrabold text-[#0284c7]" style={textStrokeStyle}>
               GLOBAL VISION
             </h1>
-            <h2 className="text-6xl text-white sm:text-7xl lg:text-7xl font-extrabold" style={textStrokeStyle}>
+            <h2 className="text-6xl text-[#0284c7] sm:text-7xl lg:text-7xl font-extrabold" style={textStrokeStyle}>
               SOLUTIONS
             </h2>
           </div>
@@ -57,9 +58,9 @@ const Hero = ({ isDarkMode }) => {
             We assist start-ups and corporates in launching exceptionally high-quality digital products by leveraging advanced tools and best industry practices. Our focus is on driving innovation and delivering excellence to the market.
           </p>
           <div className="flex items-center gap-6 my-8">
-            <a href="#" aria-label="Twitter" className="text-2xl hover:text-brand-teal transition-colors"><FaXTwitter /></a>
-            <a href="#" aria-label="LinkedIn" className="text-2xl hover:text-brand-teal transition-colors"><FaLinkedinIn /></a>
-            <a href="#" aria-label="Facebook" className="text-2xl hover:text-brand-teal transition-colors"><FaFacebook /></a>
+            <a href="https://www.instagram.com/gvsbahrain" aria-label="Twitter" className="text-2xl hover:text-brand-teal transition-colors"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/company/global-vision-solutions/" aria-label="LinkedIn" className="text-2xl hover:text-brand-teal transition-colors"><FaLinkedinIn /></a>
+            <a href="https://www.facebook.com/gvsbahrain" aria-label="Facebook" className="text-2xl hover:text-brand-teal transition-colors"><FaFacebook /></a>
           </div>
           <div className="flex items-center gap-4">
             <a href='#contact-us'>
@@ -74,13 +75,13 @@ const Hero = ({ isDarkMode }) => {
         
         <div className="relative h-full hidden lg:flex items-center justify-center">
           {/* ... image and other elements ... */}
-          <div className="relative right-[100px] mt-10 w-[600px] h-[600px]">
-            <div className="absolute inset-0 bg-[#EF3365] rounded-full z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full h-[700px] overflow-hidden rounded-b-full z-20">
+          <div className="relative right-[100px]  w-[800px] h-[700px]">
+            
+            <div className="absolute bottom-0 left-0 w-full h-[700px] overflow-hidden  z-20">
               <img
-                src="https://luique.bslthemes.com/wp-content/uploads/2022/09/profile2.png"
+                src="https://i.pinimg.com/originals/31/21/51/312151fe8b268c2203dc355d0c7d333f.png"
                 alt="Zoé Miller"
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-auto"
+                className="absolute bottom-24 left-1/2 -translate-x-1/2 rounded-2xl  object-fill w-[600px] h-auto"
               />
             </div>
           </div>
@@ -90,9 +91,9 @@ const Hero = ({ isDarkMode }) => {
             ))}
           </div>
           <div className={`absolute bottom-28 -left-10 z-20 ${statBoxClasses}`}>
-            <span className="text-4xl font-bold">12<span className='text-[#EF3365]'>+</span></span>
+            <span className="text-4xl font-bold">12<span className='text-[#0284c7]'>+</span></span>
             <span className="text-sm font-bold leading-tight">
-              YEARS OF <br /><span className='text-[#EF3365]'>EXPERIENCE</span> 
+              YEARS OF <br /><span className='text-[#0284c7]'>EXPERIENCE</span> 
             </span>
           </div>
           <div className="absolute top-[70%] right-[100%] grid grid-cols-5 gap-6">
@@ -101,9 +102,9 @@ const Hero = ({ isDarkMode }) => {
             ))}
           </div>
           <div className={`absolute bottom-10 right-44 z-20 ${statBoxClasses}`}>
-            <span className="text-4xl font-bold">330</span>
+            <span className="text-4xl font-bold">330<span className='text-[#0284c7]'>+</span></span>
             <span className="text-sm font-bold leading-tight">
-              COMPLETED <br /> <span className='text-[#EF3365]'>PROJECTS</span>
+              COMPLETED <br /> <span className='text-[#0284c7]'>PROJECTS</span>
             </span>
           </div>
         </div>

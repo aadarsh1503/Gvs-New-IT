@@ -76,7 +76,7 @@ function App() {
       <div
         style={appStyle}
         className={`transition-colors duration-500 ${
-          isDarkMode ? 'text-white' : 'text-black'
+          isDarkMode ? 'text-white' : 'text-[#464646]'
         }`}
       >
         <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />

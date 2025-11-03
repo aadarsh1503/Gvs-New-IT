@@ -36,7 +36,6 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
   }, [lastScrollY]);
 
   // ===== CHANGE #2: Choose the logo source dynamically =====
-  // If isDarkMode is true, use gvsWhite; otherwise, use the standard gvs.
   const logoSrc = isDarkMode ? gvs_white : gvs;
 
   return (
@@ -50,12 +49,18 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
         `}
       >
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-">
           {/* ===== CHANGE #3: Use the dynamic logoSrc variable ===== */}
           <img
             src={logoSrc} 
             alt="Company Logo"
-            className="w-32 h-32 object-contain"
+            // ===== CHANGE #4: Apply different size classes conditionally =====
+            // Agar dark mode hai, toh 'w-28 h-28' size use karo.
+            // Agar light mode hai, toh 'w-32 h-32' size use karo.
+            className={`
+              object-contain 
+              ${isDarkMode ? 'w-32 h-32' : 'w-36 h-36'} 
+            `}
           />
         </div>
 
@@ -63,13 +68,13 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
         <div className="flex items-center gap-6 text-2xl">
           <button 
             onClick={toggleTheme} 
-            className="hover:text-[#EF3365] transition-colors"
+            className="hover:text-[#0284c7] transition-colors"
           >
             <CgMoon />
           </button>
           <button
             onClick={toggleSidebar}
-            className="hover:text-[#EF3365] transition-colors"
+            className="hover:text-[#0284c7] transition-colors"
           >
             <FiMenu />
           </button>

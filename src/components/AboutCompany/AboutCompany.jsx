@@ -8,7 +8,7 @@ const AboutCompany = ({ isDarkMode }) => {
     ? 'bg-gradient-to-b from-[#2C3138] from-20% to-[#3a4554]' // A dark gradient that mimics the light mode's pattern
     : 'bg-gradient-to-b from-white from-20% to-[#F2EEE7]';
 
-  const textColor = isDarkMode ? 'text-white' : 'text-black';
+  const textColor = isDarkMode ? 'text-white' : 'text-[#464646]';
   const paragraphColor = isDarkMode ? 'text-gray-300' : 'text-gray-700';
   const lineColor = isDarkMode ? 'bg-white' : 'bg-black';
   const borderColor = isDarkMode ? 'border-white' : 'border-black';
@@ -44,7 +44,7 @@ const AboutCompany = ({ isDarkMode }) => {
             About The Company
           </h2>
           <p className="mt-4 flex items-center justify-center gap-3">
-            <span className="text-sm font-semibold text-[#EF3365] tracking-widest">
+            <span className="text-sm font-semibold text-[#0284c7] tracking-widest">
               A STARTUP
             </span>
             <span className={`font-serif italic text-2xl ${textColor}`}>
