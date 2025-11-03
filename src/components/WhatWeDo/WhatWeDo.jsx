@@ -68,7 +68,7 @@ const ServiceCard = ({ category, title, description, isDarkMode }) => {
       <p className={`text-xs font-bold tracking-widest uppercase mb-4 ${tertiaryTextColor}`}>{category}</p>
       <h3 className={`text-2xl font-bold mb-4 ${primaryTextColor}`}>{title}</h3>
       <p className={`leading-relaxed flex-grow ${secondaryTextColor}`}>{description}</p>
-      <a href="#" className={`flex items-center gap-2 font-bold mt-8 z-10 ${primaryTextColor}`}>
+      <a href="/#contact-us" className={`flex items-center gap-2 font-bold mt-8 z-10 ${primaryTextColor}`}>
         Contact Us <ArrowIcon />
       </a>
       <div className="absolute bottom-8 right-8 grid grid-cols-4 gap-2 pointer-events-none">
