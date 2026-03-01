@@ -1,0 +1,82 @@
+/* app.css */
+
+/* 1. Import Jost font */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* 2. Import League Spartan font */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+/* --- START OF CHANGES --- */
+
+/* 3. Import Caveat font (added multiple weights) */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+/* --- END OF CHANGES --- */
+
+
+/* 4. Import Devinyl Regular */
+@font-face {
+  font-family: 'Devinyl';
+  src: url('/fonts/Devinyl-Regular.woff2') format('woff2'),
+       url('/fonts/Devinyl-Regular.woff') format('woff'),
+       url('/fonts/Devinyl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 5. Import FF Ropsen Script Std Regular */
+@font-face {
+  font-family: 'FF Ropsen Script Std';
+  src: url('/fonts/FFRopsenScriptStd-Regular.woff2') format('woff2'),
+       url('/fonts/FFRopsenScriptStd-Regular.woff') format('woff'),
+       url('/fonts/FFRopsenScriptStd-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 6. Define custom utilities for your theme */
+@layer utilities {
+  /* Font Family Utilities */
+  .font-league-spartan {
+    font-family: 'League Spartan', sans-serif;
+  }
+
+  .font-devinyl {
+    font-family: 'Devinyl', sans-serif;
+  }
+
+  .font-ropsen {
+    font-family: 'FF Ropsen Script Std', cursive;
+  }
+
+  .font-jost {
+    font-family: 'Jost', sans-serif;
+  }
+  
+  /* --- START OF CHANGES --- */
+  .font-caveat {
+    font-family: 'Caveat', cursive;
+  }
+  /* --- END OF CHANGES --- */
+
+
+  /* Custom Colors */
+  .bg-brand-cream {
+    background-color: #f5f1e8;
+  }
+  .text-brand-teal {
+    color: #17a288;
+  }
+  
+  /* Custom Text Effects */
+  .text-shadow-custom {
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  }
+  .text-fill-transparent {
+    color: transparent;
+  }
+  .text-stroke-black-2px {
+    -webkit-text-stroke: 2px black;
+    text-stroke: 2px black;
+  }
+}
