@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiEdit2, FiEye, FiEyeOff, FiExternalLink } from 'react-icons/fi';
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaTiktok, FaPinterest, FaSnapchat } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaTiktok, FaPinterest, FaSnapchat, FaGoogle } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import AdminSidebar from './AdminSidebar';
 
@@ -56,7 +56,8 @@ const ViewSocialMediaPage = ({ isDarkMode }) => {
       'YouTube': <FaYoutube size={32} className="text-red-600" />,
       'TikTok': <FaTiktok size={32} className="text-black dark:text-white" />,
       'Pinterest': <FaPinterest size={32} className="text-red-500" />,
-      'Snapchat': <FaSnapchat size={32} className="text-yellow-400" />
+      'Snapchat': <FaSnapchat size={32} className="text-yellow-400" />,
+      'Google': <FaGoogle size={32} className="text-blue-600" />
     };
     return icons[platform] || null;
   };

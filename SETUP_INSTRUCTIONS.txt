@@ -1,0 +1,97 @@
+===============================================
+GVS SOCIAL MEDIA MANAGEMENT - SETUP INSTRUCTIONS
+===============================================
+
+STEP 1: Run the SQL commands to update the database
+----------------------------------------------------
+
+Connect to your MySQL database and run these commands:
+
+mysql -h 92.112.181.224 -u gvsemployees -p GVSemployees
+
+Then paste the following SQL:
+
+-- Remove old columns if they exist
+ALTER TABLE social_media_accounts 
+  DROP COLUMN IF EXISTS two_factor_enabled,
+  DROP COLUMN IF EXISTS notes,
+  DROP COLUMN IF EXISTS last_login_date;
+
+-- Add profile_url column if it doesn't exist
+ALTER TABLE social_media_accounts 
+  ADD COLUMN IF NOT EXISTS profile_url VARCHAR(500) AFTER recovery_email;
+
+-- Verify the table structure
+DESCRIBE social_media_accounts;
+
+-- View all records
+SELECT * FROM social_media_accounts;
+
+
+STEP 2: Verify the changes
+---------------------------
+
+The table should now have these columns:
+- id
+- platform
+- account_name
+- username
+- password
+- email
+- phone
+- recovery_email
+- profile_url (NEW)
+- status
+- created_at
+- updated_at
+
+Removed columns:
+- two_factor_enabled (REMOVED)
+- notes (REMOVED)
+- last_login_date (REMOVED)
+
+
+STEP 3: Test the application
+-----------------------------
+
+1. Start the backend server:
+   cd server
+   npm run dev
+
+2. Start the frontend:
+   cd client
+   npm run dev
+
+3. Login to admin panel and test:
+   - Add new social media account
+   - View account (check profile URL is clickable)
+   - Edit account (verify password eye icon works)
+   - Delete individual account
+   - Delete entire company row
+
+
+FEATURES IMPLEMENTED:
+---------------------
+
+✓ Google platform added to all pages
+✓ Password visibility toggle (eye icon) in Add/Edit/View pages
+✓ Profile URL field for social media links (clickable in View page)
+✓ Removed: Two-Factor Authentication, Last Login Date, Notes
+✓ Platform options: Facebook, Instagram, X (not Twitter), LinkedIn, YouTube, TikTok, Google, Pinterest, Snapchat
+✓ Compact design with circular platform icons
+✓ Company-based grouping with plus button to add more accounts
+✓ Delete individual accounts or entire company rows
+✓ Search and filter by company
+✓ Dark/Light theme support
+
+
+COMPLETED FIXES:
+----------------
+
+1. Added Google icon to ViewSocialMediaPage.jsx getPlatformIcon function
+2. Updated EditSocialMediaPage.jsx to use "X" instead of "Twitter"
+3. Added Google platform option to EditSocialMediaPage.jsx
+4. Updated social_media_table.sql to remove unwanted columns
+5. All pages now have consistent platform options and icons
+
+===============================================

@@ -9,15 +9,25 @@ CREATE TABLE IF NOT EXISTS social_media_accounts (
   phone VARCHAR(50),
   recovery_email VARCHAR(255),
   profile_url VARCHAR(500),
-  two_factor_enabled BOOLEAN DEFAULT FALSE,
-  notes TEXT,
   status ENUM('active', 'inactive', 'suspended') DEFAULT 'active',
-  last_login_date DATE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   INDEX idx_platform (platform),
   INDEX idx_status (status)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Verify the table was created
+-- If table already exists, remove old columns (if they exist)
+ALTER TABLE social_media_accounts 
+  DROP COLUMN IF EXISTS two_factor_enabled,
+  DROP COLUMN IF EXISTS notes,
+  DROP COLUMN IF EXISTS last_login_date;
+
+-- Add profile_url column if it doesn't exist
+ALTER TABLE social_media_accounts 
+  ADD COLUMN IF NOT EXISTS profile_url VARCHAR(500) AFTER recovery_email;
+
+-- Verify the table structure
+DESCRIBE social_media_accounts;
+
+-- View all records
 SELECT * FROM social_media_accounts;

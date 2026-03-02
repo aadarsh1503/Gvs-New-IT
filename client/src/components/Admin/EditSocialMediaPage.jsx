@@ -155,10 +155,11 @@ const EditSocialMediaPage = ({ isDarkMode }) => {
                     <option value="">Select Platform</option>
                     <option value="Facebook">Facebook</option>
                     <option value="Instagram">Instagram</option>
-                    <option value="Twitter">Twitter</option>
+                    <option value="X">X (Twitter)</option>
                     <option value="LinkedIn">LinkedIn</option>
                     <option value="YouTube">YouTube</option>
                     <option value="TikTok">TikTok</option>
+                    <option value="Google">Google</option>
                     <option value="Pinterest">Pinterest</option>
                     <option value="Snapchat">Snapchat</option>
                     <option value="Other">Other</option>

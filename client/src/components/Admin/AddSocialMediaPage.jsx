@@ -1,13 +1,16 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { FiArrowLeft, FiSave, FiEye, FiEyeOff } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import AdminSidebar from './AdminSidebar';
 
 const AddSocialMediaPage = ({ isDarkMode }) => {
+  const [searchParams] = useSearchParams();
+  const companyFromUrl = searchParams.get('company');
+  
   const [formData, setFormData] = useState({
     platform: '',
-    account_name: '',
+    account_name: companyFromUrl || '',
     username: '',
     password: '',
     email: '',
@@ -95,6 +98,13 @@ const AddSocialMediaPage = ({ isDarkMode }) => {
                 isDarkMode ? 'text-white' : 'text-gray-900'
               }`}>
                 Add Social Media Account
+                {companyFromUrl && (
+                  <span className={`block text-lg font-normal mt-2 ${
+                    isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                  }`}>
+                    for {companyFromUrl}
+                  </span>
+                )}
               </h1>
             </div>
 
@@ -115,6 +125,7 @@ const AddSocialMediaPage = ({ isDarkMode }) => {
                     <option value="LinkedIn">LinkedIn</option>
                     <option value="YouTube">YouTube</option>
                     <option value="TikTok">TikTok</option>
+                    <option value="Google">Google</option>
                     <option value="Pinterest">Pinterest</option>
                     <option value="Snapchat">Snapchat</option>
                     <option value="Other">Other</option>
@@ -122,15 +133,21 @@ const AddSocialMediaPage = ({ isDarkMode }) => {
                 </div>
 
                 <div>
-                  <label className={labelClass}>Account Name *</label>
+                  <label className={labelClass}>Account Name (Company) *</label>
                   <input
                     type="text"
                     required
                     value={formData.account_name}
                     onChange={(e) => setFormData({ ...formData, account_name: e.target.value })}
                     className={inputClass}
-                    placeholder="e.g., GVS Official"
+                    placeholder="e.g., GVS IT"
+                    readOnly={!!companyFromUrl}
                   />
+                  {companyFromUrl && (
+                    <p className={`text-xs mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      Adding to existing company
+                    </p>
+                  )}
                 </div>
 
                 <div>
