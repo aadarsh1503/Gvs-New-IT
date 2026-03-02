@@ -24,6 +24,10 @@ import ResetPassword from './components/Admin/ResetPassword';
 import ViewStaffPage from './components/Admin/ViewStaffPage';
 import EditStaffPage from './components/Admin/EditStaffPage';
 import SettingsPage from './components/Admin/SettingsPage';
+import SocialMediaDashboard from './components/Admin/SocialMediaDashboard';
+import AddSocialMediaPage from './components/Admin/AddSocialMediaPage';
+import ViewSocialMediaPage from './components/Admin/ViewSocialMediaPage';
+import EditSocialMediaPage from './components/Admin/EditSocialMediaPage';
 
 function App() {
   // ===== LOCALSTORAGE INTEGRATION =====
@@ -112,6 +116,10 @@ function App() {
             <Route path="/admin/staff/view/:id" element={<ViewStaffPage isDarkMode={isDarkMode} />} />
             <Route path="/admin/staff/edit/:id" element={<EditStaffPage isDarkMode={isDarkMode} />} />
             <Route path="/admin/settings" element={<SettingsPage isDarkMode={isDarkMode} />} />
+            <Route path="/admin/social-media" element={<SocialMediaDashboard isDarkMode={isDarkMode} toggleTheme={toggleTheme} />} />
+            <Route path="/admin/social-media/add" element={<AddSocialMediaPage isDarkMode={isDarkMode} />} />
+            <Route path="/admin/social-media/view/:id" element={<ViewSocialMediaPage isDarkMode={isDarkMode} />} />
+            <Route path="/admin/social-media/edit/:id" element={<EditSocialMediaPage isDarkMode={isDarkMode} />} />
             
             {/* Hidden signup route - difficult to access */}
             <Route path="/gvs-admin-secret-registration-portal-2026" element={<AdminSignup isDarkMode={isDarkMode} />} />

@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import staffRoutes from './routes/staff.js';
 import settingsRoutes from './routes/settings.js';
+import socialMediaRoutes from './routes/socialMedia.js';
 import pool from './config/database.js';
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/staff', staffRoutes);
 app.use('/api/settings', settingsRoutes);
+app.use('/api/social-media', socialMediaRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

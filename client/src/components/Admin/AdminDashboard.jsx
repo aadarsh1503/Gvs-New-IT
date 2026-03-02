@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiEdit2, FiTrash2, FiLogOut, FiSearch, FiEye, FiSettings } from 'react-icons/fi';
+import { FiEdit2, FiTrash2, FiSearch, FiEye, FiSun, FiMoon } from 'react-icons/fi';
 import { toast } from 'react-toastify';
+import AdminSidebar from './AdminSidebar';
 import ConfirmationModal from './ConfirmationModal';
 
 const AdminDashboard = ({ isDarkMode, toggleTheme }) => {
@@ -97,64 +98,42 @@ const AdminDashboard = ({ isDarkMode, toggleTheme }) => {
   };
 
   return (
-    <div className={`min-h-screen py-8 px-4 sm:px-6 lg:px-8 ${
-      isDarkMode ? 'bg-gradient-to-b from-[#222831] to-[#2C3138]' : 'bg-[#F2EEE7]'
-    }`}>
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className={`rounded-xl p-6 mb-6 ${
-          isDarkMode ? 'bg-[#282E35]' : 'bg-white shadow-lg'
-        }`}>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-              <h1 className={`text-3xl font-bold ${
-                isDarkMode ? 'text-white' : 'text-gray-900'
-              }`}>
-                Staff Management Dashboard
-              </h1>
-              <p className={`mt-1 ${
-                isDarkMode ? 'text-gray-400' : 'text-gray-600'
-              }`}>
-                Total Staff: {staff.length}
-              </p>
-            </div>
-            
-            <div className="flex gap-3">
-              <button
-                onClick={() => navigate('/admin/settings')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
-                  isDarkMode
-                    ? 'bg-[#2C3138] text-white hover:bg-[#363D45]'
-                    : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
-                }`}
-              >
-                <FiSettings /> Settings
-              </button>
+    <div className="flex">
+      <AdminSidebar isDarkMode={isDarkMode} onLogout={handleLogout} />
+      
+      <div className={`flex-1 ml-64 min-h-screen ${
+        isDarkMode ? 'bg-gradient-to-b from-[#222831] to-[#2C3138]' : 'bg-[#F2EEE7]'
+      }`}>
+        <div className="p-8">
+          {/* Header */}
+          <div className={`rounded-xl p-6 mb-6 ${
+            isDarkMode ? 'bg-[#282E35]' : 'bg-white shadow-lg'
+          }`}>
+            <div className="flex justify-between items-center mb-6">
+              <div>
+                <h1 className={`text-3xl font-bold ${
+                  isDarkMode ? 'text-white' : 'text-gray-900'
+                }`}>
+                  Staff Management Dashboard
+                </h1>
+                <p className={`mt-1 ${
+                  isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}>
+                  Total Staff: {staff.length}
+                </p>
+              </div>
               
               <button
                 onClick={toggleTheme}
-                className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                className={`p-3 rounded-lg transition-all ${
                   isDarkMode
                     ? 'bg-[#2C3138] text-white hover:bg-[#363D45]'
                     : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
                 }`}
               >
-                {isDarkMode ? '☀️ Light' : '🌙 Dark'}
-              </button>
-              
-              <button
-                onClick={handleLogout}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white transition-all hover:scale-105 ${
-                  isDarkMode ? 'bg-red-600' : 'bg-red-500'
-                }`}
-              >
-                <FiLogOut /> Logout
+                {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
               </button>
             </div>
-          </div>
-
-          {/* Search */}
-          <div className="mt-6">
             <div className="relative">
               <FiSearch className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${
                 isDarkMode ? 'text-gray-400' : 'text-gray-500'
@@ -172,16 +151,15 @@ const AdminDashboard = ({ isDarkMode, toggleTheme }) => {
               />
             </div>
           </div>
-        </div>
 
-        {/* Staff Table */}
-        {loading ? (
-          <div className="text-center py-12">
-            <div className={`text-xl ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-              Loading...
+          {/* Staff Table */}
+          {loading ? (
+            <div className="text-center py-12">
+              <div className={`text-xl ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                Loading...
+              </div>
             </div>
-          </div>
-        ) : error ? (
+          ) : error ? (
           <div className={`rounded-xl p-12 text-center ${
             isDarkMode ? 'bg-[#282E35]' : 'bg-white shadow-lg'
           }`}>
@@ -315,6 +293,7 @@ const AdminDashboard = ({ isDarkMode, toggleTheme }) => {
             </div>
           </div>
         )}
+        </div>
       </div>
 
       {/* Delete Confirmation Modal */}
